@@ -67,15 +67,13 @@ window.addEventListener('load', () => {
   });
 
   // Mouse control & dragging
-  const mouse = Mouse.create(render.canvas);
   const mouseConstraint = MouseConstraint.create(engine, {
-    mouse,
-    constraint: { stiffness: 0.2, render: { visible: false } },
-    // limit grabbing to dynamic (non-static) bodies
-    collisionFilter: { group: 0 }
-  });
-  World.add(world, mouseConstraint);
-  render.mouse = mouse;
+  mouse,
+  constraint: { stiffness: 0.2, render: { visible: false } },
+  // limit grabbing to dynamic (non-static) bodies
+  collisionFilter: { group: 0 }
+});
+
 
   // Basic boundaries
   const wallThickness = 80;
